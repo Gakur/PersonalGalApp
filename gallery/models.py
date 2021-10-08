@@ -24,3 +24,28 @@ class location(models.Model):
         self.name = update
         self.save()     
 
+class category(models.Model):
+    name = models.CharField(max_length=30)
+
+
+    @classmethod
+    def get_category_id(cls, id):
+        categories = category.objects.name(pk = id)
+        return categories
+
+    def __str__(self):
+        return self.name  
+
+    
+    @classmethod
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.save()
+
+    def update_category(self, update):
+        self.name = update
+        self.save()
+
+          
