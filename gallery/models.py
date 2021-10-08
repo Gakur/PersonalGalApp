@@ -50,7 +50,7 @@ class category(models.Model):
         self.save()
 
 
-class image(models.Model):
+class Image(models.Model):
     image = models.ImageField()
     name = models.CharField(max_length=30)
     image_description = models.TextField()  
@@ -79,7 +79,7 @@ class image(models.Model):
 
     @classmethod
     def search_by_category(cls,image_category):
-        images = image.objects.filter(image_category__name__contains=image_category)
+        images = Image.objects.filter(image_category__name__contains=image_category)
         return images
 
     @classmethod
