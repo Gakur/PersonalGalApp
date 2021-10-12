@@ -9,8 +9,6 @@
     <title></title>
     {% block styles %}
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     {% endblock %}
 </head>
 
@@ -21,8 +19,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="navMain">
         <div class="container navigation header_right wow fadeInLeft animated animated" data-wow-delay=".5s"
             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-            <a class="navbar-brand" href="/"><img src="{% static 'images/cam5.png' %}" class="" style="width:30px">
-                GALLERY</a>
+            <a class="navbar-brand" href="/"><img src="{% static 'images/hd.jpg' %}" class="" style="width:30px">
+                GALLERY Studio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,14 +35,14 @@
                     <li class="nav-item"><a class="nav-link open-nav" style="cursor:pointer">LOCATION</a></li>
                 </ul>
                 <ul class="navbar-nav left">
-                    <a class="nav-item nav-link ml-auto social" href="https://github.com/SophiaNM" target="_blank"><i
+                    <a class="nav-item nav-link ml-auto social" href="https://github.com" target="_blank"><i
                             class="fab fa-github"></i></a>
                     <a class="nav-item nav-link ml-auto social"
-                        href="https://www.linkedin.com/in/sophia-njeri-murage-b14073b5/" target="_blank"><i
+                        href="https://www.linkedin.com" target="_blank"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a class="nav-item nav-link ml-auto social" href="https://twitter.com/MurageSophia"
+                    <a class="nav-item nav-link ml-auto social" href="https://twitter.com"
                         target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a class="nav-item nav-link ml-auto social" href="https://www.facebook.com/sophianjeri.murage.9"
+                    <a class="nav-item nav-link ml-auto social" href="https://www.facebook.com"
                         target="_blank"><i class="fab fa-facebook"></i></a>
                 </ul>
             </div>
@@ -58,8 +56,8 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title about"><img src="{% static 'images/cam5.png' %}" class="" style="width:30px">
-                        SUNSPLASH</h5>
+                    <h5 class="modal-title about"><img src="{% static 'images/hd.jpg' %}" class="" style="width:30px">
+                        GALLERY Studio</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -67,10 +65,10 @@
                 <div class="modal-body">
                     <div class="container row">
                         <p class="abt">
-                            Sunsplash is an application of beautiful images with a splash of color.
+                            GALLERY Studio is the best place to visit and get a taste of nice and good pictures.
                             <br>
                         <p class="abt">
-                            Search for photoghraphs on interest based on various categories and view the pictures by
+                            Search for images on interest based on various categories and view the images by
                             location.
                         </p>
                         </p>
@@ -80,8 +78,8 @@
                         </div>
                         <hr>
                         <blockquote class="text-muted abt">
-                            ~Perfection is achieved not when there is nothing more to add but when there is nothing left
-                            to take away ~ Antoine de Saint-Exupery
+                            ~“A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing.” ~George Bernhard Shaw
+
                         </blockquote>
                     </div>
                 </div>
@@ -96,7 +94,7 @@
         <a href="#" data-toggle="modal" data-target="#about">About</a>
         <a>Locations:</a>
         {% for location in locations %}
-        <a href="/location/{{location.id}}">{{location.name}}</a>
+        <a href="{% url 'location' location.pk %}">{{location.name}}</a>
         {% empty %}
         <a href="#">There are no locations</a>
         {% endfor %}
@@ -108,32 +106,32 @@
                 <div class="col-md-12 social-buttons">
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a href="https://twitter.com/MurageSophia" target="_blank">
+                            <a href="https://twitter.com" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a class="tooltip-test" title="follow me"
-                                href="https://www.facebook.com/sophianjeri.murage.9" target="_blank">
+                                href="https://www.facebook.com" target="_blank">
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="tooltip-test" title="follow me" href="https://github.com/SophiaNM"
+                            <a class="tooltip-test" title="follow me" href="https://github.com"
                                 target="_blank">
                                 <i class="fab fa-github"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a class="tooltip-test" title="follow me"
-                                href="https://www.linkedin.com/in/sophia-njeri-murage-b14073b5/" target="_blank">
+                                href="https://www.linkedin.com" target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-12">
-                    <p>Copyright &copy; 2018 All Rights Reserved</p>
+                    <p>Copyright &copy; 2021 All Rights Reserved</p>
                 </div>
             </div>
         </div>
