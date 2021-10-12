@@ -1,13 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class location(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length=30)
 
 
     @classmethod
     def get_location_id(cls, id):
-        locations = location.objects.get(pk = id)
+        locations = Location.objects.get(pk = id)
         return locations
 
     def __str__(self):
@@ -25,13 +25,13 @@ class location(models.Model):
         self.save() 
 
 
-class category(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=30)
 
 
     @classmethod
     def get_category_id(cls, id):
-        categories = category.objects.name(pk = id)
+        categories = Category.objects.name(pk = id)
         return categories
 
     def __str__(self):
@@ -54,8 +54,8 @@ class Image(models.Model):
     image = models.ImageField()
     name = models.CharField(max_length=30)
     image_description = models.TextField()  
-    image_location = models.ForeignKey(location,on_delete=models.CASCADE)
-    image_category = models.ForeignKey(category,on_delete=models.CASCADE)
+    image_location = models.ForeignKey(Location,on_delete=models.CASCADE)
+    image_category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
     def save_image(self):
         self.save()
@@ -83,8 +83,8 @@ class Image(models.Model):
         return images
 
     @classmethod
-    def filter_by_location(cls, image_location):
-        images_location = cls.objects.filter(image_location__id=image_location)
+    def filter_by_location(cls, pk):
+        images_location = cls.objects.filter(pk=pk)
         return images_location
 
     def __str__(self):
