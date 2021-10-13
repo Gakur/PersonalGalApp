@@ -13,37 +13,23 @@
 </head>
 
 <body>
-
-
     <!-- Main Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" id="navMain">
         <div class="container navigation header_right wow fadeInLeft animated animated" data-wow-delay=".5s"
             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-            <a class="navbar-brand" href="/"><img src="{% static 'images/hd.jpg' %}" class="" style="width:30px">
-                GALLERY Studio</a>
+            <a class="navbar-brand" href="/"><img src="{% static 'images/hd.jpg' %}" class="" style="width:60px;"><span class=""  style="color: purple;">GALLERY Studio</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="titles">
                 <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="/"> HOME <span
+                    <li class="nav-item active"><a class="nav-link" style="color: chartreuse;" href="/"> HOME <span
                                 class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#about">ABOUT</a>
+                    <li class="nav-item"><a class="nav-link" style="color: chartreuse;" href="/" data-toggle="modal" data-target="#about">ABOUT</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/#category">CATEGORY</a></li>
-                    <li class="nav-item"><a class="nav-link open-nav" style="cursor:pointer">LOCATION</a></li>
-                </ul>
-                <ul class="navbar-nav left">
-                    <a class="nav-item nav-link ml-auto social" href="https://github.com" target="_blank"><i
-                            class="fab fa-github"></i></a>
-                    <a class="nav-item nav-link ml-auto social"
-                        href="https://www.linkedin.com" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a class="nav-item nav-link ml-auto social" href="https://twitter.com"
-                        target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a class="nav-item nav-link ml-auto social" href="https://www.facebook.com"
-                        target="_blank"><i class="fab fa-facebook"></i></a>
+                    <li class="nav-item"><a class="nav-link" style="color: chartreuse;" href="/#category">CATEGORY</a></li>
+                    <li class="nav-item"><a class="nav-link open-nav" style="cursor:pointer; color: chartreuse;">LOCATION</a></li>
                 </ul>
             </div>
         </div>
@@ -56,7 +42,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title about"><img src="{% static 'images/hd.jpg' %}" class="" style="width:30px">
+                    <h5 class="modal-title about"><img src="{% static 'images/hd.jpg' %}" class="" style="width:30px; color: chartreuse;">
                         GALLERY Studio</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -74,7 +60,7 @@
                         </p>
                         <div class="">
 
-                            <img src="{% static 'images/spalsh.jpg' %}" alt="" class="splash">
+                            <img src="{% static 'images/not.jpg' %}" alt="" class="splash">
                         </div>
                         <hr>
                         <blockquote class="text-muted abt">
@@ -88,11 +74,11 @@
     </div>
     <!-- End of about modal -->
 
-    <!-- Location side navebar -->
+    <!-- Location side navbar -->
     <div id="sideNav" class="nav-side">
         <a href="javascript:void(0)" class="close-nav">&times;</a>
-        <a href="#" data-toggle="modal" data-target="#about">About</a>
-        <a>Locations:</a>
+        <a href="#" data-toggle="modal" data-target="#about"></a>
+        <a style="color: chartreuse;">Locations:</a>
         {% for location in locations %}
         <a href="{% url 'location' location.pk %}">{{location.name}}</a>
         {% empty %}
@@ -131,7 +117,7 @@
                     </ul>
                 </div>
                 <div class="col-md-12">
-                    <p>Copyright &copy; 2021 All Rights Reserved</p>
+                    <p style="color: chartreuse;">Copyright &copy; 2021 All Rights Reserved</p>
                 </div>
             </div>
         </div>
