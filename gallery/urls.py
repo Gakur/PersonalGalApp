@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns=[
     path('',views.welcome, name = 'welcome'),
-    path('by_image/',views.by_image, name = 'image'),
+    path('image/(?P<category_name>\w+)/(?P<image_id>\d+)',views.by_image, name = 'by_image'),
     path('search/',views.search, name = 'search_image'),
     path('location/(?P<image_location>\d+)',views.filter_by_location, name = 'location')
 ]
