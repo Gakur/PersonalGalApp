@@ -15,7 +15,7 @@
         <div class="container imageloc">
             <form class="form" role="search" action="{% url 'search_image' %}">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="&#xf3ee; Search by category"
+                    <input type="text" class="form-control" placeholder="&#xf3ee; Enter category name to search"
                         name="image_category">
                     <br>
                 </div>
@@ -47,7 +47,7 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <img src="{% static 'images/sorry.png' %}" alt="" class="oops">
+            <img src="{% static '' %}" alt="" class="oops">
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
             <h2 class="text-center"> Sorry no image for {{message}} category. Images are comming soon.</h2>
@@ -70,7 +70,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-9 col-lg-9">
-                            <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img
+                            <a href="{% url 'by_image' category_name=image.image_category.name image_id=image.id %}"><img
                                     id="img{{image.id}}" src="{{image.picture.cdn_url}}" class="img-thumbnail"
                                     alt="Image" style="cursor:pointer"></a>
                         </div>
